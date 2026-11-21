@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>vaultpass</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Sign-in -->
+    <main id="login-view" class="login">
+      <section class="login-hero" aria-hidden="true">
+        <div class="hero-brand"><span class="mark"></span>vaultpass</div>
+        <h2>Every key your team shares, behind one front door.</h2>
+        <ul>
+          <li>Team credentials, always in sync</li>
+          <li>Personal items only you can open</li>
+          <li>An administrators' console with a full audit trail</li>
+        </ul>
+        <div class="keys"><i></i><i></i><i></i></div>
+      </section>
+
+      <section class="login-panel">
+        <form id="login-form" class="login-form">
+          <h1>Sign in</h1>
+          <p class="muted">Use your Northwind account to open the vault.</p>
+          <label for="username">Username</label>
+          <input id="username" name="username" value="alice" autocomplete="username" />
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            value="password123"
+            autocomplete="current-password"
+          />
+          <button type="submit" class="primary">Unlock vault</button>
+          <p id="login-error" class="error" role="alert"></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- App shell -->
+    <div id="app-view" class="shell hidden">
+      <aside class="side">
+        <div class="side-brand"><span class="mark"></span>vaultpass</div>
+        <nav class="nav" aria-label="Sections">
+          <button type="button" class="nav-item active" data-view="team">Team vault</button>
+          <button type="button" class="nav-item" data-view="personal">My items</button>
+          <button type="button" class="nav-item hidden" id="nav-admin" data-view="admin">
+            Admin console
+          </button>
+        </nav>
+        <div class="side-foot">
+          <div class="chip">
+            <span id="who-name" class="chip-name"></span>
+            <span id="who-role" class="role"></span>
+          </div>
+          <button id="logout" type="button" class="ghost">Sign out</button>
+        </div>
+      </aside>
+
+      <section class="content">
+        <!-- Team vault -->
+        <div id="view-team" class="view">
+          <header class="view-head">
+            <h1>Team vault</h1>
+            <p class="muted">Credentials shared with everyone at Northwind.</p>
+          </header>
+          <div id="team-grid" class="grid"></div>
+        </div>
+
+        <!-- Personal items -->
+        <div id="view-personal" class="view hidden">
+          <header class="view-head">
+            <h1>My items</h1>
+            <p class="muted">Credentials that belong only to you.</p>
+          </header>
+          <div id="personal-grid" class="grid"></div>
+        </div>
+
+        <!-- Admin console -->
+        <div id="view-admin" class="view hidden">
+          <header class="view-head">
+            <h1>Admin console</h1>
+            <p class="muted">Accounts, the full vault and the audit trail.</p>
+          </header>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab active" data-tab="users">Accounts</button>
+            <button type="button" class="tab" data-tab="all">All credentials</button>
+            <button type="button" class="tab" data-tab="audit">Audit trail</button>
+          </div>
+          <p id="admin-error" class="error" role="alert"></p>
+          <div id="admin-body"></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="foot">vaultpass · educational appsec lab · run locally only</footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
