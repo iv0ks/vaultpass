@@ -1,0 +1,17 @@
+http:
+  # Entry points define how Traefik listens for incoming requests.
+  routers:
+    # Vaultpass router.
+    vaultpass:
+      rule: 'Host(`vaultpass.iv0ks.dev`)'
+      entryPoints:
+        - websecure
+      service: vaultpass
+      tls: { certResolver: namecheap }
+
+  # Services define how Traefik forwards requests to backend servers.
+  services:
+    vaultpass:
+      loadBalancer:
+        servers:
+          - url: 'http://host.docker.internal:3000/'
