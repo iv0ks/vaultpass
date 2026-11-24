@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/iv0ks/vaultpass/compare/v1.0.0...v1.0.1) (2026-11-24)
+
+
+### Build System
+
+* **deps:** bump the all-dependencies group across 1 directory with 5 updates ([#2](https://github.com/iv0ks/vaultpass/issues/2)) ([ca2ed3d](https://github.com/iv0ks/vaultpass/commit/ca2ed3d25ddcd8347d8db947b13e53c53ef2d9b5))
+
 ## [1.0.0](https://github.com/iv0ks/vaultpass/compare/v1.0.0...v1.0.0) (2026-11-24)
 
 
