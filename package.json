@@ -1,6 +1,6 @@
 {
   "name": "vaultpass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Intentionally vulnerable access-management platform to practice broken access control via a trusted, unverified JWT claim (CWE-284).",
   "type": "module",
